@@ -1,0 +1,80 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: constant(safe-area-inset-top);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: #333B4B;
+  font-family: "Alternate", "PingFangSC-Medium";
+}
+
+@font-face {
+  font-family: 'DINAlternate-Bold';
+  src: '../font/DINAlternateBold.ttf';
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  background: none;
+  border: 0px;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>首页</title>
+</head>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/global.css">
+
+<body>
+  <div id="app">
+    <div class="content-box">
+      <header class="head">
+        <a href="/index.html" class="logo">
+          <img src="./image/logo.png" alt="">
+        </a>
+        <div>
+          <ul class="head-ul">
+            <li class="head-li" v-for="(item,index) in headList" :key="index">
+              <a :href="item.url" class="head-a" :class="{'active' :item.flag}">{{item.val}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <section class="section-box">
+        <div class="section-left">
+          <img src="#" alt="">
+        </div>
+        <div class="section-right">
+          <h1>Fanr</h1>
+          <h2>有范儿的生活！</h2>
+          <p>
+            <a href="">
+              <img src="#" alt="">
+            </a>
+            <a href="">
+              <img src="#" alt="">
+            </a>
+          </p>
+        </div>
+      </section>
+    </div>
+    <footer class="footer-box">
+      <div class="footer-box-title-1">
+        <ul>
+          <li v-for="(item,index) in footerList" :key="index">
+            <a :href="item.url">{{item.val}}</a>
+            <span v-if="index != footerList.length-1">｜</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-box-title-2">
+        <p>Cpoyright© 2019 Fanr.clubAll Rights Reserved  备案号：苏ICP备18055127号 苏网文[2019]3829-133号</p>
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="./js/jq.js"></script>
+<script src="./js/vue.js"></script>
+<script>
+  let app = new Vue({
+    el: '#app',
+    data: {
+      msg: '首页',
+      headList: [{
+          val: '首页',
+          url: '/index.html',
+          flag: true
+        },
+        {
+          val: '品牌入驻',
+          url: '#'
+        },
+        {
+          val: 'Fanr体验式',
+          url: '#'
+        },
+        {
+          val: '咨询中心',
+          url: '#'
+        },
+        {
+          val: '关于我们',
+          url: '#'
+        },
+      ],
+      footerList: [{
+          val: '注册协议',
+          url: '#'
+        },
+        {
+          val: '隐私政策',
+          url: '#'
+        },
+        {
+          val: '社区规范',
+          url: '#'
+        },
+        {
+          val: '账号找回',
+          url: '#'
+        },
+        {
+          val: '联系我们',
+          url: '#'
+        },
+        {
+          val: '厂商登录',
+          url: '#'
+        },
+      ]
+      //  注册协议  |  隐私政策  |  社区规范  |  账号找回  |  联系我们  |  厂商登录
+    },
+    methods: {
+
+    },
+    mounted() {
+
+    }
+
+  })
+</script>
+<style>
+  #app {
+    width: 100vw;
+    min-width: 1200px;
+    height: 100vh;
+    background: url(./image/banner.png)no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .head {
+    margin-bottom: 7vw;
+  }
+
+  .section-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-left {
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-left img {
+    width: 17vw;
+    height: 34vw;
+    background: #333;
+  }
+
+  .section-right {
+    margin-left: 3vw;
+  }
+
+  .section-right h1 {
+    line-height: 6vw;
+    font-size: 6vw;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    margin-bottom: 2vw;
+  }
+
+  .section-right h2 {
+    font-size: 3vw;
+    line-height: 3vw;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 10px;
+    color: #ffffff;
+    margin-bottom: 3vw;
+  }
+
+  .section-right p {
+    display: flex;
+    align-items: center;
+  }
+  .section-right a  {
+    display: inherit;
+  }
+  .section-right a img {
+    width: 7vw;
+    height: 2vw;
+    margin-right: 1.5vw;
+    background: #333;
+  }
+</style>
+
+</html>
