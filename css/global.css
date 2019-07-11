@@ -1,18 +1,19 @@
 .content-box {
   min-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 160px;
 }
 
 .head {
-  font-size: 1vw;
-  padding-top: 1vw;
+  font-size: 18px;
+  padding-top: 18px;
   display: flex;
   justify-content: space-around;
 }
 
 .logo {
-  width: 6vw;
-  height: 3vw;
+  width: 120px;
+	height: 53px;
 }
 
 .logo img {
@@ -22,12 +23,12 @@
 
 .head-ul {
   display: flex;
-  height: 3vw;
+	height: 53px;
   align-items: center;
 }
 
 .head-li {
-  margin: 0 1.5vw;
+  margin: 0 30px;
 }
 
 .head-a {
@@ -48,7 +49,7 @@
   width: 100%;
   color: #cccccc;
   text-align: center;
-  padding: 1vw 0;
+  padding: 20px 0;
 }
 
 .footer-box-title-1 ul {

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>首页</title>
+  <title>账号找回</title>
 </head>
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/global.css">
@@ -26,23 +26,22 @@
         </div>
       </header>
       <section class="section-box">
-        <div class="section-left">
-          <img src="./image/phone.png" alt="">
-        </div>
-        <div class="section-right">
-          <h1>Fanr</h1>
-          <h2>有范儿的生活！</h2>
-          <p>
-            <a href="https://apps.apple.com/cn/app/id1449822919" target="_blank">
-              <img src="./image/ios.png" alt="">
-            </a>
-            <a href="https://a.app.qq.com/o/simple.jsp?pkgname=com.sinmore.fanr" target="_blank">
-              <img src="./image/android.png" alt="">
-            </a>
-          </p>
-        </div>
+        <h3>账号找回</h3>
+        <p></p>
       </section>
     </div>
+    <div class="about-content">
+      <p><span style="color: #ff0000">账号被盗</span>--如果您的账号被盗，请发送邮件至ourfanr@126.com，标题命名为「账号找回+您被盗取的范儿会ID+您的 联系电话」，邮件内容里详细说明帐号被盗取的过程，我们会尽快为您处理。</p>
+      <br>
+      <p><span style="color: #ff0000">找回密码</span>--如果您遗忘自己的账号密码，请在范儿会App登录页面点击“找回密码”，按照相应提示进行操作。</p>
+      <br>
+      <p><span style="color: #ff0000">封禁申诉</span>--若您收到了封禁相关的系统通知，则说明您的范儿会账号涉嫌违规被封禁，相关规定可参考《范儿会社区规 范》。如您的账号不存在违规行为，请发送邮件至ourfanr@126.com进行申诉，标题命名为「封禁申诉+您的范儿会 ID」，我们会尽快为您审查。若经审查没有违规行为，将在3-7个工作日内为您解封。</p>
+      <br>
+      <p><span style="color: #ff0000">其他问题</span>--如果您存在其他关于范儿会账号的问题，请发送邮件至ourfanr@126.com，标题命名为「账号问题+您的范 儿会ID」，邮件内容里详细说明您遇到的问题，我们将尽快为您处理。"</p>
+      <br>
+      
+    </div>
+
     <footer class="footer-box">
       <div class="footer-box-title-1">
         <ul>
@@ -67,8 +66,7 @@
       msg: '首页',
       headList: [{
           val: '首页',
-          url: '/index.html',
-          flag: true
+          url: '/index.html'
         },
         {
           val: '品牌入驻',
@@ -118,10 +116,16 @@
           type: '_blank'
         },
       ]
-      //  注册协议  |  隐私政策  |  社区规范  |  账号找回  |  联系我们  |  厂商登录
+
     },
     methods: {
-
+      show(type) {
+        if (type == 1) {
+          $('#box1').slideToggle();
+        } else {
+          $('#box2').slideToggle();
+        }
+      }
     },
     mounted() {
 
@@ -134,65 +138,54 @@
     /* width: 100vw; */
     min-width: 1200px;
     height: 100%;
-    background: url(./image/banner.png)no-repeat center;
-    background-size: cover;
+    background: url(./image/find.png)no-repeat top;
+  }
+
+  #app .content-box {
+    padding-bottom: 0;
   }
 
   .head {
     margin-bottom: 100px;
   }
 
+  .footer-box {
+    background-color: #2e2f32;
+  }
+
   .section-box {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 230px;
   }
 
-  .section-left {
-    display: flex;
-    justify-content: center;
-  }
-
-  .section-left img {
-    width: 328px;
-	height: 655px;
-  }
-
-  .section-right {
-    margin-left: 54px;
-  }
-
-  .section-right h1 {
-    line-height: 111px;
-    font-size: 111px;
+  .section-box h3 {
+    text-align: center;
     font-weight: normal;
     font-stretch: normal;
+    width: 100%;
+    font-size: 64px;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  .section-box p {
+    width: 160px;
+    height: 2px;
+    background: #fff;
+  }
+
+
+  .about-content {
+    width: 1200px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 36px;
     letter-spacing: 0px;
-    color: #ffffff;
-    margin-bottom: 30px;
-  }
-
-  .section-right h2 {
-    font-size: 52px;
-    line-height: 52px;
-    font-weight: normal;
-    font-stretch: normal;
-    letter-spacing: 10px;
-    color: #ffffff;
-    margin-bottom: 66px;
-  }
-
-  .section-right p {
-    display: flex;
-    align-items: center;
-  }
-  .section-right a  {
-    display: inherit;
-  }
-  .section-right a img {
-    width: 140px;
-	height: 40px;
-    margin-right: 30px; 
+    color: #333333;
+    padding-bottom: 130px;
   }
 </style>
 

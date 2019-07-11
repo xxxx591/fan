@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>首页</title>
+  <title>咨询中心</title>
 </head>
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/global.css">
@@ -26,22 +26,35 @@
         </div>
       </header>
       <section class="section-box">
-        <div class="section-left">
-          <img src="./image/phone.png" alt="">
-        </div>
-        <div class="section-right">
-          <h1>Fanr</h1>
-          <h2>有范儿的生活！</h2>
-          <p>
-            <a href="https://apps.apple.com/cn/app/id1449822919" target="_blank">
-              <img src="./image/ios.png" alt="">
-            </a>
-            <a href="https://a.app.qq.com/o/simple.jsp?pkgname=com.sinmore.fanr" target="_blank">
-              <img src="./image/android.png" alt="">
-            </a>
-          </p>
-        </div>
+        <h3>咨询中心</h3>
+        <p></p>
       </section>
+      <div class="list-box">
+        <div class="left-box">
+          <ul>
+
+            <li>
+              <p>
+                <a href="#">FANR 助力年轻人找到美好生活</a>
+              </p>
+              <p>2019-03-19</p>
+            </li>
+            <li>
+              <p>
+                <a href="#">外媒眼中的“中国最佳创新公司”，FANR 凭什么这么火</a>
+              </p>
+              <p>2019-03-19</p>
+            </li>
+            <li>
+              <p>
+                <a href="#">社区转型电商的故事有哪些可学之处？</a>
+              </p>
+              <p>2019-03-19</p>
+            </li>
+          </ul>
+        </div>
+
+      </div> 
     </div>
     <footer class="footer-box">
       <div class="footer-box-title-1">
@@ -67,8 +80,7 @@
       msg: '首页',
       headList: [{
           val: '首页',
-          url: '/index.html',
-          flag: true
+          url: '/index.html'
         },
         {
           val: '品牌入驻',
@@ -80,7 +92,8 @@
         },
         {
           val: '咨询中心',
-          url: './news.html'
+          url: './news.html',
+          flag: true
         },
         {
           val: '关于我们',
@@ -121,7 +134,13 @@
       //  注册协议  |  隐私政策  |  社区规范  |  账号找回  |  联系我们  |  厂商登录
     },
     methods: {
-
+      show(type) {
+        if (type == 1) {
+          $('#box1').slideToggle();
+        } else {
+          $('#box2').slideToggle();
+        }
+      }
     },
     mounted() {
 
@@ -134,65 +153,95 @@
     /* width: 100vw; */
     min-width: 1200px;
     height: 100%;
-    background: url(./image/banner.png)no-repeat center;
-    background-size: cover;
+    background: url(./image/news.png)no-repeat top;
   }
 
   .head {
     margin-bottom: 100px;
   }
 
+  .footer-box {
+    background-color: #2e2f32;
+  }
+
   .section-box {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 230px;
   }
 
-  .section-left {
-    display: flex;
-    justify-content: center;
-  }
-
-  .section-left img {
-    width: 328px;
-	height: 655px;
-  }
-
-  .section-right {
-    margin-left: 54px;
-  }
-
-  .section-right h1 {
-    line-height: 111px;
-    font-size: 111px;
+  .section-box h3 {
+    text-align: center;
     font-weight: normal;
     font-stretch: normal;
-    letter-spacing: 0px;
-    color: #ffffff;
-    margin-bottom: 30px;
+    width: 100%;
+    font-size: 64px;
+    color: #fff;
+    margin-bottom: 32px;
   }
 
-  .section-right h2 {
-    font-size: 52px;
-    line-height: 52px;
-    font-weight: normal;
-    font-stretch: normal;
-    letter-spacing: 10px;
-    color: #ffffff;
-    margin-bottom: 66px;
+  .section-box p {
+    width: 160px;
+    height: 2px;
+    background: #fff;
   }
 
-  .section-right p {
+  .list-box {
+    width: 1200px;
+    margin: 0 auto;
     display: flex;
+  }
+
+  .list-box img {
+    cursor: pointer;
+  }
+
+  .left-box,
+  .right-box {
+    flex: 1;
+  }
+
+  .left-box {
+    padding-right: 40px;
+  }
+  .left-box  a {
+    color: #333333
+  }
+
+  .right-box {
+    padding-left: 40px;
+  }
+
+  .left-box li,
+  .right-box li {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    color: #333333;
+    font-size: 20px;
+    padding: 20px 0;
   }
-  .section-right a  {
-    display: inherit;
+
+  .zhuce {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
   }
-  .section-right a img {
-    width: 140px;
-	height: 40px;
-    margin-right: 30px; 
+
+  .zhuce a {
+    display: inline-block;
+    width: 480px;
+    height: 60px;
+    background-color: #262c2f;
+    border-radius: 30px;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
   }
 </style>
 

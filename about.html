@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关于我们</title>
+</head>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/global.css">
+
+<body>
+  <div id="app">
+    <div class="content-box">
+      <header class="head">
+        <a href="/index.html" class="logo">
+          <img src="./image/logo.png" alt="">
+        </a>
+        <div>
+          <ul class="head-ul">
+            <li class="head-li" v-for="(item,index) in headList" :key="index">
+              <a :href="item.url" class="head-a" :class="{'active' :item.flag}">{{item.val}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <section class="section-box">
+        <h3>关于我们</h3>
+        <p></p>
+      </section>
+    </div>
+    <div class="about-content">
+      <p>Fanr（范儿）致力于打造P2C模式下的社群电商平台——品牌方入驻，体验师引领，用户体验分享。</p>
+      <br>
+      <p>【品牌方】</p>
+      <p>
+        一方面，品牌方以品牌直营店的形式开设店铺。在Fanr平台上一个品牌只有一家店铺，产品由品牌方发货，确保正品。另一方面，品牌方的“品牌管家”作为官方发言人，在Fanr平台上不定期发布品牌动态，通过持续传播，形成品牌的竞争优势。
+      </p>
+      <br>
+      <p>【Fanr体验师】</p>
+      <p>Fanr邀请全世界乐于分享的时尚达人成为Fanr体验师，他们是手工艺人、潮流达人、跨领域专家等等。体验师不仅仅可以在Fanr平台上分享产品，还可以将自己的作品在范儿平台上传播给更广泛的群体。</p>
+      <br>
+      <p>【买一件，开小店】</p>
+      <p>
+        用户免费即可注册成为Fanr平台会员，购买任一产品即可开设自己的店铺。平台将满分好评的产品放到你的店铺中，其他人通过你的体验分享或产品链接成交，你将会收到相应的佣金。无需进货、无需客服、无需发货，没有任何运营成本，轻轻松松躺着赚钱！
+      </p>
+      <br>
+      <p>品牌方通过爆品助推品牌发展。体验师通过传播实现流量价值变现。消费者减少了鉴别成本，通过分享省钱赚钱，享受购物的乐趣。——Fanr构建的高品质产品从工厂直达用户的模式，实现了品牌方、体验师、用户互惠“三赢”的商业新生态。
+      </p>
+      <br>
+      <p>Fanr——纵享生活，唯爱永恒。助跑质造，从心开始！</p>
+      <br>
+    </div>
+    <div class="about-us">
+      <div class="about-box">
+        <div class="list">
+          <div>
+            <p class="title-01">地址：</p>
+            <p class="title-02">南通市崇川区崇川路58号南通大学科技园5号楼405室</p>
+          </div>
+          <div>
+            <p class="title-01">网址：</p>
+            <p class="title-02">http://www.fanr.club</p>
+          </div>
+        </div>
+        <div class="list">
+          <div>
+            <p class="title-01">电话：</p>
+            <p class="title-02">0513—55089190</p>
+          </div>
+          <div>
+            <p class="title-01">微博</p>
+            <p class="title-02">https://weibo.com/fanrstyle</p>
+          </div>
+        </div>
+        <div class="list">
+          <div>
+            <p class="title-01">邮箱：</p>
+            <p class="title-02">fanrclub@yeah.net</p>
+          </div>
+          <div style="display: flex;">
+            <p class="title-01">微信公众号：</p>
+            <p class="title-02"><img src="./image/erweima.png" alt=""></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer-box">
+      <div class="footer-box-title-1">
+        <ul>
+          <li v-for="(item,index) in footerList" :key="index">
+            <a :href="item.url" :target="item.type">{{item.val}}</a>
+            <span v-if="index != footerList.length-1">｜</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-box-title-2">
+        <p>Cpoyright© 2019 Fanr.clubAll Rights Reserved  备案号：苏ICP备18055127号 苏网文[2019]3829-133号</p>
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="./js/jq.js"></script>
+<script src="./js/vue.js"></script>
+<script>
+  let app = new Vue({
+    el: '#app',
+    data: {
+      msg: '首页',
+      headList: [{
+          val: '首页',
+          url: '/index.html'
+        },
+        {
+          val: '品牌入驻',
+          url: './join.html'
+        },
+        {
+          val: 'Fanr体验式',
+          url: '#'
+        },
+        {
+          val: '咨询中心',
+          url: './news.html'
+        },
+        {
+          val: '关于我们',
+          url: './about.html',
+          flag: true
+        },
+      ],
+      footerList: [{
+          val: '注册协议',
+          url: '#',
+          type: ''
+        },
+        {
+          val: '隐私政策',
+          url: '#',
+          type: ''
+        },
+        {
+          val: '社区规范',
+          url: '#',
+          type: ''
+        },
+        {
+          val: '账号找回',
+          url: './find.html',
+          type: ''
+        },
+        {
+          val: '联系我们',
+          url: '#',
+          type: ''
+        },
+        {
+          val: '厂商登录',
+          url: 'http://shangjia.fanr.club/',
+          type: '_blank'
+        },
+      ]
+      //  注册协议  |  隐私政策  |  社区规范  |  账号找回  |  联系我们  |  厂商登录
+    },
+    methods: {
+      show(type) {
+        if (type == 1) {
+          $('#box1').slideToggle();
+        } else {
+          $('#box2').slideToggle();
+        }
+      }
+    },
+    mounted() {
+
+    }
+
+  })
+</script>
+<style>
+  #app {
+    /* width: 100vw; */
+    min-width: 1200px;
+    height: 100%;
+    background: url(./image/about.png)no-repeat top;
+  }
+
+  #app .content-box {
+    padding-bottom: 0;
+  }
+
+  .head {
+    margin-bottom: 100px;
+  }
+
+  .footer-box {
+    background-color: #2e2f32;
+  }
+
+  .section-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 230px;
+  }
+
+  .section-box h3 {
+    text-align: center;
+    font-weight: normal;
+    font-stretch: normal;
+    width: 100%;
+    font-size: 64px;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  .section-box p {
+    width: 160px;
+    height: 2px;
+    background: #fff;
+  }
+
+  .about-us {
+    width: 100%;
+    margin: 0 auto;
+    height: 240px;
+    background-color: #fafafa;
+  }
+
+  .about-box {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 104px;
+  }
+
+  .about-box .list {
+    flex: 1;
+  }
+
+  .about-box .list div {
+    padding-top: 30px;
+  }
+
+  .title-01 {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0px;
+    color: #333333;
+    font-weight: normal;
+    font-stretch: normal;
+  }
+
+  .title-02 {
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #666666;
+    font-weight: normal;
+  }
+
+  .about-content {
+    width: 1200px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: 0px;
+    color: #333333;
+  }
+</style>
+
+</html>
