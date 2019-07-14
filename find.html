@@ -64,50 +64,50 @@
     el: '#app',
     data: {
       msg: '首页',
-      headList: [{
+     headList: [{
           val: '首页',
-          url: '/index.html'
+          url: '/index.html', 
         },
         {
           val: '品牌入驻',
           url: './join.html'
         },
         {
-          val: 'Fanr体验式',
-          url: '#'
+          val: 'Fanr体验师',
+          url: './agreement.html?id=2'
         },
         {
-          val: '咨询中心',
+          val: '资讯中心',
           url: './news.html'
         },
         {
           val: '关于我们',
-          url: './about.html'
+          url: './agreement.html?id=1'
         },
       ],
-      footerList: [{
+       footerList: [{
           val: '注册协议',
-          url: '#',
+          url: './agreement.html?id=4',
           type: ''
         },
         {
           val: '隐私政策',
-          url: '#',
+          url: './agreement.html?id=5',
           type: ''
         },
         {
           val: '社区规范',
-          url: '#',
+          url: './agreement.html?id=6',
           type: ''
         },
         {
           val: '账号找回',
-          url: './find.html',
+          url: './agreement.html?id=7',
           type: ''
         },
         {
           val: '联系我们',
-          url: '#',
+          url: './agreement.html?id=8',
           type: ''
         },
         {
@@ -116,7 +116,6 @@
           type: '_blank'
         },
       ]
-
     },
     methods: {
       show(type) {
@@ -158,7 +157,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 230px;
+    margin-bottom: 220px;
   }
 
   .section-box h3 {

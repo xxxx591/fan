@@ -110,49 +110,49 @@
       msg: '首页',
       headList: [{
           val: '首页',
-          url: '/index.html'
+          url: '/index.html', 
         },
         {
           val: '品牌入驻',
           url: './join.html'
         },
         {
-          val: 'Fanr体验式',
-          url: '#'
+          val: 'Fanr体验师',
+          url: './agreement.html?id=2'
         },
         {
-          val: '咨询中心',
-          url: './news.html'
+          val: '资讯中心',
+          url: './news.html',
         },
         {
           val: '关于我们',
-          url: './about.html',
-          flag: true
+          url: './agreement.html?id=1',
+          flag:true
         },
       ],
-      footerList: [{
+       footerList: [{
           val: '注册协议',
-          url: '#',
+          url: './agreement.html?id=4',
           type: ''
         },
         {
           val: '隐私政策',
-          url: '#',
+          url: './agreement.html?id=5',
           type: ''
         },
         {
           val: '社区规范',
-          url: '#',
+          url: './agreement.html?id=6',
           type: ''
         },
         {
           val: '账号找回',
-          url: './find.html',
+          url: './agreement.html?id=7',
           type: ''
         },
         {
           val: '联系我们',
-          url: '#',
+          url: './agreement.html?id=8',
           type: ''
         },
         {
@@ -161,7 +161,7 @@
           type: '_blank'
         },
       ]
-      //  注册协议  |  隐私政策  |  社区规范  |  账号找回  |  联系我们  |  厂商登录
+    
     },
     methods: {
       show(type) {
@@ -203,7 +203,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 230px;
+    margin-bottom: 220px;
   }
 
   .section-box h3 {

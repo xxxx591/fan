@@ -1,3 +1,4 @@
+ 
 .content-box {
   min-width: 1200px;
   margin: 0 auto;
@@ -5,15 +6,19 @@
 }
 
 .head {
-  font-size: 18px;
-  padding-top: 18px;
+  font-size: 0.8vw;
+  padding-top: 0.8vw;
   display: flex;
   justify-content: space-around;
+  position: fixed;
+  width: 100%;
 }
-
+.section-box{
+  padding-top: 8.5vw;
+}
 .logo {
-  width: 120px;
-	height: 53px;
+  width: 5vw;
+	height: 2.5vw;
 }
 
 .logo img {
@@ -50,6 +55,7 @@
   color: #cccccc;
   text-align: center;
   padding: 20px 0;
+  font-size: .8vw;
 }
 
 .footer-box-title-1 ul {
@@ -61,6 +67,11 @@
 .footer-box-title-1 ul li a {
   letter-spacing: 0vw;
   color: #cccccc;
-  font-size: 1vw;
+  /* font-size: .8vw; */
   text-decoration: none;
+}
+.section-box h3{
+  font-size: 4vw!important;
+  color: #fff;
+  margin-bottom: 1vw!important;
 }

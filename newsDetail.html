@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title id='title'> </title>
+</head>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/global.css">
+
+<body>
+  <div id="app">
+    <div class="content-box">
+      <header class="head">
+        <a href="/index.html" class="logo">
+          <img src="./image/logo.png" alt="">
+        </a>
+        <div>
+          <ul class="head-ul">
+            <li class="head-li" v-for="(item,index) in headList" :key="index">
+              <a :href="item.url" class="head-a" :class="{'active' :item.flag}">{{item.val}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <section class="section-box">
+        <h3>{{msg}}</h3>
+        <p></p>
+      </section>
+    </div>
+    <div class="about-content" v-html="detailsHtml">
+       
+    </div>
+
+    <footer class="footer-box">
+      <div class="footer-box-title-1">
+        <ul>
+          <li v-for="(item,index) in footerList" :key="index">
+            <a :href="item.url" :target="item.type">{{item.val}}</a>
+            <span v-if="index != footerList.length-1">｜</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-box-title-2">
+        <p>Cpoyright© 2019 Fanr.clubAll Rights Reserved  备案号：苏ICP备18055127号 苏网文[2019]3829-133号</p>
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="./js/jq.js"></script>
+<script src="./js/vue.js"></script>
+<script>
+  let app = new Vue({
+    el: '#app',
+    data: {
+      msg: '首页',
+      detailsHtml:'',
+      headList: [{
+          val: '首页',
+          url: '/index.html', 
+        },
+        {
+          val: '品牌入驻',
+          url: './join.html'
+        },
+        {
+          val: 'Fanr体验师',
+          url: './agreement.html?id=2'
+        },
+        {
+          val: '资讯中心',
+          url: './news.html'
+        },
+        {
+          val: '关于我们',
+          url: './agreement.html?id=1'
+        },
+      ],
+       footerList: [{
+          val: '注册协议',
+          url: './agreement.html?id=4',
+          type: ''
+        },
+        {
+          val: '隐私政策',
+          url: './agreement.html?id=5',
+          type: ''
+        },
+        {
+          val: '社区规范',
+          url: './agreement.html?id=6',
+          type: ''
+        },
+        {
+          val: '账号找回',
+          url: './agreement.html?id=7',
+          type: ''
+        },
+        {
+          val: '联系我们',
+          url: './agreement.html?id=8',
+          type: ''
+        },
+        {
+          val: '厂商登录',
+          url: 'http://shangjia.fanr.club/',
+          type: '_blank'
+        },
+      ]
+    
+    },
+    methods: {
+      show(type) {
+        if (type == 1) {
+          $('#box1').slideToggle();
+        } else {
+          $('#box2').slideToggle();
+        }
+      },
+      init(id) {
+        $.ajax({
+          type: "POST",
+          url: "http://api.fanr.club/web/Consultation/find",
+          data: {
+            id: id
+          },
+          success: (res) => {
+            console.log('res', res);
+            this.msg = res.data.title;
+            this.detailsHtml = res.data.details; 
+            $('#title').html(res.data.title);
+          }
+        });
+      },
+      getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+          return unescape(r[2]);
+        }
+        return null;
+      }
+    },
+    mounted() {
+      let id = this.getQueryString('id')
+      this.init(id)
+    }
+
+  })
+</script>
+<style>
+  #app {
+    /* width: 100vw; */
+    min-width: 1200px;
+    height: 100%;
+    background: url(./image/news.png)no-repeat top;
+  }
+
+  #app .content-box {
+    padding-bottom: 0;
+  }
+
+  .head {
+    margin-bottom: 100px;
+  }
+
+  .footer-box {
+    background-color: #2e2f32;
+  }
+
+  .section-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 220px;
+  }
+
+  .section-box h3 {
+    text-align: center;
+    font-weight: normal;
+    font-stretch: normal;
+    width: 100%;
+    font-size: 64px;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  .section-box p {
+    width: 160px;
+    height: 2px;
+    background: #fff;
+  }
+
+
+  .about-content {
+    width: 1200px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: 0px;
+    color: #333333;
+    padding-bottom: 130px;
+  }
+</style>
+
+</html>

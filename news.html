@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>咨询中心</title>
+  <title>资讯中心</title>
 </head>
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/global.css">
@@ -26,35 +26,23 @@
         </div>
       </header>
       <section class="section-box">
-        <h3>咨询中心</h3>
+        <h3>资讯中心</h3>
         <p></p>
       </section>
       <div class="list-box">
         <div class="left-box">
-          <ul>
-
-            <li>
+          <ul> 
+            <li v-for="(item, index) in newsList" :key="index">
               <p>
-                <a href="#">FANR 助力年轻人找到美好生活</a>
+                <a :href="'./newsDetail.html?id='+item.id">{{item.title}}</a>
               </p>
-              <p>2019-03-19</p>
+              <p>{{item.inputTime}}</p>
             </li>
-            <li>
-              <p>
-                <a href="#">外媒眼中的“中国最佳创新公司”，FANR 凭什么这么火</a>
-              </p>
-              <p>2019-03-19</p>
-            </li>
-            <li>
-              <p>
-                <a href="#">社区转型电商的故事有哪些可学之处？</a>
-              </p>
-              <p>2019-03-19</p>
-            </li>
+            
           </ul>
         </div>
 
-      </div> 
+      </div>
     </div>
     <footer class="footer-box">
       <div class="footer-box-title-1">
@@ -80,49 +68,49 @@
       msg: '首页',
       headList: [{
           val: '首页',
-          url: '/index.html'
+          url: '/index.html', 
         },
         {
           val: '品牌入驻',
           url: './join.html'
         },
         {
-          val: 'Fanr体验式',
-          url: '#'
+          val: 'Fanr体验师',
+          url: './agreement.html?id=2'
         },
         {
-          val: '咨询中心',
+          val: '资讯中心',
           url: './news.html',
-          flag: true
+          flag:true
         },
         {
           val: '关于我们',
-          url: './about.html'
+          url: './agreement.html?id=1'
         },
       ],
-      footerList: [{
+       footerList: [{
           val: '注册协议',
-          url: '#',
+          url: './agreement.html?id=4',
           type: ''
         },
         {
           val: '隐私政策',
-          url: '#',
+          url: './agreement.html?id=5',
           type: ''
         },
         {
           val: '社区规范',
-          url: '#',
+          url: './agreement.html?id=6',
           type: ''
         },
         {
           val: '账号找回',
-          url: './find.html',
+          url: './agreement.html?id=7',
           type: ''
         },
         {
           val: '联系我们',
-          url: '#',
+          url: './agreement.html?id=8',
           type: ''
         },
         {
@@ -130,7 +118,9 @@
           url: 'http://shangjia.fanr.club/',
           type: '_blank'
         },
-      ]
+      ],
+    newsList: []
+
       //  注册协议  |  隐私政策  |  社区规范  |  账号找回  |  联系我们  |  厂商登录
     },
     methods: {
@@ -140,10 +130,49 @@
         } else {
           $('#box2').slideToggle();
         }
+      },
+      init() {
+        $.ajax({
+          type: "POST",
+          url: "http://api.fanr.club/web/Consultation/index",
+          success: (res) => {
+             (res.data.list).map(item=>{
+              item.inputTime = (this.getDate('yyyy-mm-dd',item.inputTime)).split(' ')[0]
+            }) 
+            this.newsList = res.data.list
+            console.log(this.newsList);
+            
+          }
+        });
+      },
+      getDate(format, str) {
+        var oDate = new Date(str),
+          oYear = oDate.getFullYear(),
+          oMonth = oDate.getMonth() + 1,
+          oDay = oDate.getDate(),
+          oHour = oDate.getHours(),
+          oMin = oDate.getMinutes(),
+          oSec = oDate.getSeconds();
+          if (format == "yyyy-mm-dd") {
+            oTime = oYear + '-' + this.getzf(oMonth) + '-' + this.getzf(oDay) + ' ' + this.getzf(oHour) + ':' + this
+              .getzf(oMin) + ':' +
+              this.getzf(oSec)
+          } else if (format == 'yyyy/mm/dd') {
+          oTime = oYear + '/' + this.getzf(oMonth) + '/' + this.getzf(oDay) + ' ' + this.getzf(oHour) + ':' + this
+            .getzf(oMin) + ':' +
+            this.getzf(oSec);
+        }
+        return oTime;
+      }, 
+      getzf(num) {
+        if (parseInt(num) < 10) {
+          num = '0' + num;
+        }
+        return num;
       }
     },
     mounted() {
-
+      this.init()
     }
 
   })
@@ -169,7 +198,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 230px;
+    margin-bottom: 220px;
   }
 
   .section-box h3 {
@@ -206,7 +235,8 @@
   .left-box {
     padding-right: 40px;
   }
-  .left-box  a {
+
+  .left-box a {
     color: #333333
   }
 
@@ -222,6 +252,7 @@
     color: #333333;
     font-size: 20px;
     padding: 20px 0;
+    font-size: 1.2vw;
   }
 
   .zhuce {
