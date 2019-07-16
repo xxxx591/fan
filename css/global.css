@@ -10,11 +10,12 @@
   padding-top: 0.8vw;
   display: flex;
   justify-content: space-around;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
 }
 .section-box{
-  padding-top: 8.5vw;
+  /* padding-top: 8.5vw; */
+  padding-top: 5.5vw;
 }
 .logo {
   width: 5vw;
@@ -33,8 +34,30 @@
 }
 
 .head-li {
-  margin: 0 30px;
+  padding: 0 30px;
 }
+
+.head-ul li{
+  position: relative; 
+}
+.head-ul li::after{
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  border-bottom: 2px solid #fff;
+  transition: 0.1s ease;
+}
+.head-ul li:hover::after{
+  width: 100%;
+  left: 0;
+}
+.head-ul li:hover~li::after {
+  left: 0;
+}
+
 
 .head-a {
   color: #fff;
@@ -62,7 +85,31 @@
   display: flex;
   justify-content: center;
   margin-bottom: 1vw;
+  position: relative;
 }
+ 
+.footer-box-title-1 li{
+  position: relative; 
+  padding-bottom: 8px;
+}
+.footer-box-title-1 li::after{
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  border-bottom: 2px solid #ccc;
+  transition: 0.1s ease;
+}
+.footer-box-title-1 li:hover::after{
+  width: 100%;
+  left: 0;
+}
+.footer-box-title-1 li:hover~li::after {
+  left: 0;
+}
+
 
 .footer-box-title-1 ul li a {
   letter-spacing: 0vw;

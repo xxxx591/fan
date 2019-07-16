@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="./image/icon-logo.ico">
   <title>资讯中心</title>
 </head>
 <link rel="stylesheet" href="./css/style.css">
@@ -137,7 +138,7 @@
           url: "http://api.fanr.club/web/Consultation/index",
           success: (res) => {
              (res.data.list).map(item=>{
-              item.inputTime = (this.getDate('yyyy-mm-dd',item.inputTime)).split(' ')[0]
+              item.inputTime = (this.getDate('yyyy-mm-dd',parseInt(item.inputTime+'000'))).split(' ')[0]
             }) 
             this.newsList = res.data.list
             console.log(this.newsList);

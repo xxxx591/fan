@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="./image/icon-logo.ico">
   <title id='title'> </title>
 </head>
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/global.css">
 
 <body>
-  <div id="app">
+  <div id="app" :style="{'background-url':imgurl}">
     <div class="content-box">
       <header class="head">
         <a href="/index.html" class="logo">
@@ -58,6 +59,7 @@
       msg: '首页',
       htmlUrl:'',
       htmlTitle:'',
+      imgurl:'112',
       headList: [{
           val: '首页',
           url: '/index.html', 
@@ -153,6 +155,9 @@
           this.htmlUrl = 'http://m.fanr.club/text/info/3'
           this.htmlTitle = '关于我们'
           $('#title').html('关于我们');
+          $('#app').css({
+            'background-image':'url(./image/about.png)'
+          })
           break;
         case '2':
           this.htmlUrl = 'http://m.fanr.club/text/info/2'
@@ -178,22 +183,15 @@
           this.htmlUrl = 'http://m.fanr.club/text/info/7'
           this.htmlTitle = '账号找回'
           $('#title').html('账号找回');
+          $('#app').css({
+            'background-image':'url(./image/find.png)'
+          })
           break;
         case '8':
           this.htmlUrl = 'http://m.fanr.club/text/info/8'
           this.htmlTitle = '联系我们'
           $('#title').html('联系我们');
-          break;
-        case '10':
-          this.htmlUrl = 'http://m.fanr.club/text/info/8'
-          this.htmlTitle = '联系我们'
-          $('#title').html('联系我们');
-          break;
-        case '11':
-          this.htmlUrl = 'http://m.fanr.club/text/info/8'
-          this.htmlTitle = '联系我们'
-          $('#title').html('联系我们');
-          break;
+          break; 
       
         default:
           break;
@@ -207,7 +205,7 @@
     /* width: 100vw; */
     min-width: 1200px;
     height: 100%;
-    background: url(./image/news.png)no-repeat top;
+    background: url(./image/agreement.png)no-repeat top;
   }
 
   #app .content-box {
