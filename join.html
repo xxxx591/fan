@@ -34,19 +34,104 @@
         <div class="left-box">
           <ul>
             <li>
-              <p>厂商注册前准备</p>
+              <p style="font-weight: bold">重要提示</p>
               <img @click="show(1)" src="./image/bottom.png" alt="">
             </li>
-            <div id="box1" style="display: none;">
+          </ul>
+        </div>
+        <div class="right-box">
+          <ul>
+            <li style="border-bottom: 1px solid transparent;">
+              <p></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="showbox1" class="show-box">
+        <p>【Fanr】只接受拥有商标注册证/Registered的厂商入驻。</p>
+        <p>商标注册证/Registered处于注册信息变更受理阶段或处于转让受理阶段的，暂不接受入驻。直至商标局核准变更证明下发后才予以入驻。</p>
+      </div>
+      <div class="list-box">
+        <div class="left-box">
+          <ul>
+            <li>
+              <p style="font-weight: bold">厂商注册前准备</p>
+              <!-- <img @click="show(1)" src="./image/bottom.png" alt=""> -->
+              <img @click="show(2)" src="./image/bottom.png" alt="">
+            </li>
+          </ul>
+        </div>
+        <div class="right-box">
+          <ul>
+            <li>
+              <p style="font-weight: bold">厂商入驻流程</p>
+              <!-- <img @click="show(2)" src="./image/bottom.png" alt=""> -->
+              <img @click="show(3)" src="./image/bottom.png" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="showbox2" class="show-box">
+        <p>1、阅读须知，准备相关资料。</p>
+        <p>2、注册，填写入驻信息，并提交相应的资质。</p>
+        <p>3、资质审核，并尽快反馈审核结果。</p>
+        <p>4、合同签署。</p>
+      </div>
+      <div id="showbox3" class="show-box">
+        <p>1、营业执照（三证合一或者营业执照、税务登记证、组织机构代码证）彩色扫描件。</p>
+        <p>2、商标注册证或Registered（境外商标注册证）彩色扫描件。</p>
+        <p>若商标注册证持有人为自然人，须上传个人商标使用授权文件，内容要求写明自然人姓名、身份证号或护照号（境外自然人）及授权品牌名，及该商标持有人自然人签名，并加盖授权方公司的公章。且须同时提供该自然人身份证或护照正反面复印件。</p>
+        <p>3、需提供的其他证件扫描件。包括：</p>
+        <ul class="showbox3-ul">
+          <li>
+            <p style="border-top: 1px solid #333;font-weight: bold;">类目</p>
+            <p style="border-top: 1px solid #333;font-weight: bold;">需提供的材料</p>
+          </li>
+          <li>
+            <p>食品</p>
+            <p>《食品生产许可证》或《食品流通许可证》或《食品经营许可证》</p>
+          </li>
+          <li>
+            <p>保健食品膳食营养补充食品</p>
+            <p>《保健食品生产企业卫生许可证》或《进口保健食品批准证书》</p>
+          </li>
+          <li>
+            <p>彩妆香水美妆工具护肤美体精油洗护用品</p>
+            <p>《企业卫生许可证》或《化妆品生产许可证》</p>
+          </li>
+          <li>
+            <p>酒</p>
+            <p>《酒类产销许可证》或《酒类流通备案登记表》或《酒类零售许可证》或《酒类批发许可证》</p>
+          </li>
+          <li>
+            <p>读物教辅书籍杂志报纸音乐影视</p>
+            <p>《出版物经营许可证》</p>
+          </li>
+          <li>
+            <p>玩具童车基础建材美发护发电器</p>
+            <p>《国家3C产品认证》</p>
+          </li>
+        </ul>
+        <p>4、品牌描述（30 个字符以内）、品牌简介（140 个字符以内）</p>
+        <p>5、品牌头图1 张</p>
+        <p>6、《品牌认证申请公函》彩色扫描件，包括品牌方公章。公函中的“账号名称”需与商标注册证一致。上传、提交时需提供彩色扫描件）</p>
+        <p>7、公司开户行信息以及开发票信息，包括企业名称，纳税识别号，开户行名称，银行账号。</p>
+        <p>8、运营人信息，包括姓名、固定电话、手机、邮箱、收件地址等</p>
+        <p>9、品牌管家指定，品牌管家是贵品牌在【Fanr】社区的官方账号，代表品牌在【Fanr】社区进行发帖、分享、参与话题等品牌营销行为。</p>
+        <p>10、《品牌认证申请公函》、《Fanr厂商入驻协议》、运营者身份证复印件（正反面，并在上方加盖公章，同时注明“仅限于注册Fanr审核用”）等邮寄到我司。</p>
+        <p>地址：江苏省南通市崇川区崇川路58号南通产业研究院5号楼405室  </p>
+        <p>收件人：姚小姐</p>
+        <p>联系电话：0513—55089190</p>
+      </div>
+
+      <div class="list-box">
+        <div class="left-box">
+          <ul>
+            <div id="box1">
               <li>
                 <p>品牌认证申请公函</p>
-                <a href="https://sinmore.s3.cn-north-1.jdcloud-oss.com/sinmore/%E5%93%81%E7%89%8C%E8%AE%A4%E8%AF%81%E5%85%AC%E5%87%BD.docx">
-                  <img src="./image/download.png" alt="">
-                </a>
-              </li>
-              <li>
-                <p>重要提示</p>
-                <a href="https://sinmore.s3.cn-north-1.jdcloud-oss.com/sinmore/%E9%87%8D%E8%A6%81%E6%8F%90%E7%A4%BA.docx">
+                <a
+                  href="https://sinmore.s3.cn-north-1.jdcloud-oss.com/sinmore/%E5%93%81%E7%89%8C%E8%AE%A4%E8%AF%81%E5%85%AC%E5%87%BD.docx">
                   <img src="./image/download.png" alt="">
                 </a>
               </li>
@@ -55,14 +140,12 @@
         </div>
         <div class="right-box">
           <ul>
-            <li>
-              <p>厂商入驻流程</p>
-              <img @click="show(2)" src="./image/bottom.png" alt="">
-            </li>
-            <div id="box2" style="display: none;">
+
+            <div id="box2">
               <li>
                 <p>Fanr厂商入驻协议-2019</p>
-                <a href="https://sinmore.s3.cn-north-1.jdcloud-oss.com/sinmore/Fanr%E5%8E%82%E5%95%86%E5%85%A5%E9%A9%BB%E5%8D%8F%E8%AE%AE-2019.docx">
+                <a
+                  href="https://sinmore.s3.cn-north-1.jdcloud-oss.com/sinmore/Fanr%E5%8E%82%E5%95%86%E5%85%A5%E9%A9%BB%E5%8D%8F%E8%AE%AE-2019.docx">
                   <img src="./image/download.png" alt="">
                 </a>
               </li>
@@ -98,12 +181,12 @@
       msg: '首页',
       headList: [{
           val: '首页',
-          url: '/index.html', 
+          url: '/index.html',
         },
         {
           val: '品牌入驻',
           url: './join.html',
-          flag:true
+          flag: true
         },
         {
           val: 'Fanr体验师',
@@ -118,7 +201,7 @@
           url: './agreement.html?id=1'
         },
       ],
-       footerList: [{
+      footerList: [{
           val: '注册协议',
           url: './agreement.html?id=4',
           type: ''
@@ -149,14 +232,23 @@
           type: '_blank'
         },
       ]
-    
+
     },
     methods: {
       show(type) {
         if (type == 1) {
-          $('#box1').slideToggle();
+          $('#showbox1').slideToggle();
+          $('#showbox2').hide();
+          $('#showbox3').hide();
+
+        } else if (type == 2) {
+          $('#showbox2').slideToggle();
+          $('#showbox1').hide();
+          $('#showbox3').hide();
         } else {
-          $('#box2').slideToggle();
+          $('#showbox3').slideToggle();
+          $('#showbox1').hide();
+          $('#showbox2').hide();
         }
       }
     },
@@ -187,7 +279,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 220px;
+    margin-bottom: 160px;
   }
 
   .section-box h3 {
@@ -210,6 +302,7 @@
     width: 1200px;
     margin: 0 auto;
     display: flex;
+    align-items: flex-end;
   }
 
   .list-box img {
@@ -239,11 +332,13 @@
     padding: 30px 0;
     border-bottom: 1px solid #e6e6e6;
   }
+
   .left-box li a,
-  .right-box li a{
+  .right-box li a {
     color: #333333;
     text-decoration: none;
   }
+
   .zhuce {
     width: 1200px;
     margin: 0 auto;
@@ -262,6 +357,30 @@
     text-align: center;
     color: #fff;
     text-decoration: none;
+  }
+
+  .show-box {
+    font-size: 16px;
+    width: 1200px;
+    margin: 20px auto;
+    display: none;
+  }
+  .showbox3-ul{
+    width: 60%;
+    padding: 15px 0;
+  }
+  .showbox3-ul li {
+    display: flex;
+    
+  }
+  .showbox3-ul li p{
+    padding: 10px;
+    border: 1px solid #333333;
+    border-top: 0;
+    flex: 1;
+  }
+  .showbox3-ul li p:first-of-type{
+    border-right: 0;
   }
 </style>
 
