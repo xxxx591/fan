@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{msg}}</h1>
+  </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      msg: 'demo'
+    },
+    methods: {
+      init() {
+        console.log('初始化');
+      }
+    },
+    mounted() {
+      this.init()
+    }
+  })
+</script>
+
+</html>
