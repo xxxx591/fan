@@ -33,8 +33,36 @@
       <div class="tab-list">
         <div class="tab-tips-1">
           <img src="./image/tips1.png" alt="">
+          <img src="./image/tips2.png" alt="">
+          <img src="./image/tips3.png" alt="">
+          <img src="./image/tips4.png" alt="">
+          <img src="./image/tips5.png" alt="">
         </div>
-
+        <div class="tab-list-box">
+          <h3>入驻流程</h3>
+          <div class="list-box-flex">
+            <div class="list-box list-box1">
+              <p class="p1">01 注册FANR账号</p>
+              <p class="p2">在App注册FANR账号，并为该账号绑定手机号</p>
+            </div>
+            <div class="list-box list-box1">
+              <p class="p1">02 填写信息与资料</p>
+              <p class="p2">点击下方“注册”，填写品牌入驻审核信息 <a class="orgin" href="./agreement.html?id=9">资质审核标准</a></p>
+            </div>
+            <div class="list-box list-box1">
+              <p class="p1">03 等待审核</p>
+              <p class="p2">1-3个工作日内出审核结果，通过后邮件通知</p>
+            </div>
+            <div class="list-box list-box1">
+              <p class="p1">04 入驻成功</p>
+              <p class="p2">店铺开通，认证完成</p>
+            </div>
+          </div>
+          <div class="button-box">
+            <button class="ruzhu" @click="go"><a href="./join.html">入驻</a></button>
+            <p class="orign"><a href="http://shangjia.fanr.club/"  target="_blank">商家入驻帮助>></a></p>
+          </div>
+        </div>
       </div>
     </div>
     <footer class="footer-box">
@@ -116,21 +144,13 @@
 
     },
     methods: {
-      show(type) {
-        if (type == 1) {
-          $('#showbox1').slideToggle();
-          $('#showbox2').hide();
-          $('#showbox3').hide();
-
-        } else if (type == 2) {
-          $('#showbox3').slideToggle();
-          $('#showbox1').hide();
-          $('#showbox2').hide();
-        } else {
-          $('#showbox2').slideToggle();
-          $('#showbox1').hide();
-          $('#showbox3').hide();
-        }
+      go(){
+        console.log('123');
+        window.location.href="./join.html"
+      },
+       
+      godetails() {
+        window.open("./agreement.html?id=9");
       }
     },
     mounted() {
@@ -186,6 +206,78 @@
 
   .tab-tips-1 img {
     width: 100%;
+  }
+
+  .tab-list-box {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 2vw;
+  }
+
+  .tab-list-box h3 {
+    font-size: 4vw;
+    color: #411c4f;
+    text-align: center;
+    font-weight: normal;
+    font-stretch: normal;
+    margin-bottom: 4vw;
+  }
+
+  .list-box-flex {
+    display: flex;
+  }
+
+  .list-box {
+    flex: 1;
+    margin-right: 5vw;
+
+  }
+
+  .list-box:last-of-type {
+    margin-right: 0;
+  }
+
+  .list-box .p1 {
+    color: #333333;
+    font-size: 1vw;
+    margin-bottom: 1vw;
+  }
+
+  .list-box .p2 {
+    font-size: 1vw;
+    color: #666666;
+  }
+
+  .orgin {
+    color: #fe6800;
+    cursor: pointer;
+  }
+  .button-box{
+    text-align: center;
+    padding-top: 4vw;
+    padding-bottom: 2vw;
+  }
+  .ruzhu {
+    width: 25vw;
+    height: 3vw;
+    background-color: #262c2f;
+    border-radius: 2vw;
+    font-size: 1vw;
+    color: #ffffff;
+    line-height: 3vw;
+  }
+  .ruzhu a{
+    color: #fff;
+  }
+  .orign {
+    color: #fe6800;
+    font-size: 1vw;
+    margin-top: 2vw;
+  }
+  .orign a{
+    color: #fe6800;
+    font-size: 1vw;
+    margin-top: 2vw;
   }
 </style>
 

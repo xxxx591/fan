@@ -5,30 +5,340 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>demo</title>
+  <link rel="shortcut icon" href="./image/icon-logo.ico">
+  <title>品牌入驻</title>
 </head>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/global.css">
 
 <body>
   <div id="app">
-    <h1>{{msg}}</h1>
+    <div class="content-box">
+      <header class="head">
+        <a href="/index.html" class="logo">
+          <img src="./image/logo.png" alt="">
+        </a>
+        <div>
+          <ul class="head-ul">
+            <li class="head-li" v-for="(item,index) in headList" :key="index">
+              <a :href="item.url" class="head-a" :class="{'active' :item.flag}">{{item.val}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <section class="section-box">
+        <h3>品牌入驻</h3>
+        <p></p>
+      </section>
+      <div class="check-tab">
+        <div class="left-box">
+          <ul class="left-list">
+            <li @click="qiehuan(index)" v-for="(item, index) in list" :key="index">
+              <p class="left-icon " :class="index==activeIndex ? 'active' : '' ">{{item.val}}</p>
+              <p class="icon " :class="index==activeIndex ? 'active-icon' : '' "></p>
+            </li>
+          </ul>
+        </div>
+        <div class="right-box">
+          <ul>
+            <li v-if="activeIndex==0">
+              <p>【Fanr】只接受拥有商标注册证/Registered的厂商入驻。商标注册证/Registered处于注册信息变更受理阶段或处于转让受理阶段的，暂不接受入驻。直至商标局核准变更证明下发后才予以入驻。</p>
+            </li>
+            <li v-if="activeIndex==1">
+              <p><b>一、总则</b> </p>
+              <br>
+              <p>1、<b>概述：</b>为了使商家提供优质的商品和服务，保障平台用户的合法权益，给广大平台用户创造一个良好的购物环境，维护Fanr平台正常的经营持续，特制定本项规章制度。 </p>
+              <p>2、<b>适用范围：</b>所有与Fanr平台合作的公司企业、个体工商户和个人。</p>
+              <p>
+                3、<b>管理原则：</b>Fanr平台商家管理制度，是对入驻平台的商家增加的基本义务和规范商家基本权利的条款，商家应该遵守国家法律、行政法规、部门规章等规范性文件。对任何涉嫌违反国家法律、行政法规、部门规章等规范性文件的行为，本规定已经有规定
+                的，适用本规则；本规定尚未规定的，Fanr平台有权酌情处理。</p>
+              <p>
+                4、<b>合作方式：</b>商家通过Fanr平台进行商品销售，商家需要依据Fanr平台的要求提交相关资料，提供售前售后服务。为更好的监管商家行为，当商家出现发货、售后、疑似售假等问题时，平台有权根据《Fanr商家违规处罚管理细则》进行处罚，情节严重者平台有权冻结商家销售货款。
+              </p>
+              <p>5、<b>行为认定：</b>对于有争议的部分，Fanr平台有权基于商家与用户的基本事实行为作出判定，并基于该事实，严格依据本条款的规定对违规行为进行相应处理。</p>
+              <p><b>二、入驻资质要求</b></p>
+              <p>
+                1、在甲方平台销售的全部商品均应符合国家法律法规及相关产品标准的规定，并在入驻时向甲方提供与质量有关和市场销售相关证明文件（包括但不限于营业执照、生产许可证、卫生许可证、国家批准文号、经营许可证、商标注册证等），并保证向甲方提供的相关证件均真实、有效；
+              </p>
+              <p>需要提供以下资质及证明文件：</p>
+              <p>1）经过年审的最新营业执照副本、组织机构代码证、税务登记证的复印件（或三证合一）、运营人身份证正反面复印件，复印件上需要加盖公章；</p>
+              <p>2）需提供商标注册证；</p>
+              <p>3）需提供的其他材料。</p>
+              
+
+            </li>
+            <li v-if="activeIndex==2">
+              <p>厂商注册须知</p>
+              <br>
+              <br>
+              <p>重要提示</p>
+              <br>
+              <p>【Fanr】只接受拥有商标注册证/Registered的厂商入驻。商标注册证/Registered处于注册信息变更受理阶段或处于转让受理阶段的，暂不接受入驻。直至商标局核准变更证明下发后才予以入驻。</p>
+              <br>
+              <br>
+              <p>厂商入驻流程</p>
+              <br>
+              <p>1阅读须知，准备相关资料。</p>
+              <p>2注册，填写入驻信息，并提交相应的资质。</p>
+              <p>3资质审核，并尽快反馈审核结果。</p>
+              <p>4合同签署。</p>
+            </li>
+            <li v-if="activeIndex==3">
+              <p>资费标准</p>
+              <br>
+              <br>
+              <p>1、甲乙双方约定的结算方式为实时结算。</p>
+              <p>2、
+                商品价格组成：零售价=厂商价+分享佣金+平台佣金。分享佣金是消费者试用后将该商品分享给其他用户的计提费用，分享佣金的多少由厂商自由决定。平台佣金是每笔交易成功后平台的计提费用，平台佣金占每笔交易零售额（不包括运费）的5%。
+              </p>
+              <p>
+                3、交易成功：消费者确认收货且作出评价。确认收货是指用户收到商品以后主动确认收货或待收货状态7天未发生售后行为则系统自动确认收货。作出评价是指用户确认收货后，对乙方商品以及服务做出的好评、中评以及差评。确认收货30天后未作出评价的，系统默认好评。
+              </p>
+              <p>4、资金结算</p>
+              <p>消费者在厂商店铺购买，确认收货且作出好评后，甲方将厂商价、分享佣金打入乙方的账户，将平台佣金打入甲方账户。</p>
+              <p>消费者无论在厂商店铺还是在消费商虚拟店铺购买，确认收货且作出中评或者差评后，甲方将厂商价打入乙方账户、平台佣金打入甲方账户，将分享佣金打入甲方用于公益事业的专用账户。</p>
+              <p>5、发票</p>
+              <p>厂商在给消费者开具的发票中，消费商计提税金由商家承担。</p>
+              <p>甲方按照乙方要求，提供已确认账单的佣金发票。乙方需要开具发票时，应及时提交开票资料至甲方，甲方在收到乙方正确的开票资料后的 15个工作日内开具发票给乙方，乙方申请开具发票的抬头必须与合同主体一致。</p>
+              <p>6、其它结算约定</p>
+              <p>6.1甲乙双方进行结算货款时，甲方有权扣除下列款项：</p>
+              <p>1）甲方根据合同约定收取的佣金金额；</p>
+              <p>2）乙方因违反约定而应当支付的违约金、损害赔偿金；</p>
+              <p>3）甲方发现商品存在缺陷，有危及人身、财产安全危险，并根据法律规定采取停止销售、召回、无害化处理或销毁等处理措施的，缺陷商品的相应价款以及因此所产生的销售损失、召回费用、处理费用、销毁费用；</p>
+              <p>4）由于乙方过错导致消费者向甲方提出投诉、索赔，事项完结前，甲方有权停止向乙方支付款项。待双方约定一致后，甲方再将应付款项支付给乙方；</p>
+              <p>5）符合约定的其它款项。</p>
+              <p>6.2甲方因检验商品所造成的商品损失应当由乙方承担。因商品质量争议，一方或双方根 据约定提请第三方检测单位对商品进行检测，检测结果显示商品有质量问题的，第三 方检测费用用由乙方承担。</p>
+              <p>6.3对账方式：甲乙双方通过甲方的平台对账系统进行货款核对，乙方认可该对账系统数据的有效性和可靠性。</p>
+              <p>6.4对甲乙双方签订的合同、协议、确认函件中所列费用及乙方因违反相关条款所产生的违约金，甲方有权选择在乙方货款中直接扣除。</p>
+              <p>6.5乙方对与甲方之间发生的任何款项（包括但不限于货款、费用、违约金等）有异议的，应自扣款之日起 5天内以书面形式向甲方提出异议，逾期没有提出任何异议的,即视为接受该扣款。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <footer class="footer-box">
+      <div class="footer-box-title-1">
+        <ul>
+          <li v-for="(item,index) in footerList" :key="index">
+            <a :href="item.url" :target="item.type">{{item.val}}</a>
+            <span v-if="index != footerList.length-1">｜</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-box-title-2">
+        <p>Cpoyright© 2019 Fanr.clubAll Rights Reserved  <a href="http://beian.miit.gov.cn/">备案号：苏ICP备18055127号</a>
+          苏网文[2019]3829-133号</p>
+      </div>
+    </footer>
   </div>
 </body>
+<script src="./js/jq.js"></script>
 <script src="./js/vue.js"></script>
 <script>
-  var app = new Vue({
+  let app = new Vue({
     el: '#app',
     data: {
-      msg: 'demo'
+      msg: '首页',
+      activeIndex: 0,
+      headList: [{
+          val: '首页',
+          url: '/index.html',
+        },
+        {
+          val: '品牌入驻',
+          url: './join_new.html',
+          flag: true
+        },
+        {
+          val: 'Fanr体验师',
+          url: './agreement.html?id=2'
+        },
+        {
+          val: '资讯中心',
+          url: './news.html'
+        },
+        {
+          val: '关于我们',
+          url: './agreement.html?id=1'
+        },
+      ],
+      footerList: [{
+          val: '注册协议',
+          url: './agreement.html?id=4',
+          type: ''
+        },
+        {
+          val: '隐私政策',
+          url: './agreement.html?id=5',
+          type: ''
+        },
+        {
+          val: '社区规范',
+          url: './agreement.html?id=6',
+          type: ''
+        },
+        {
+          val: '账号找回',
+          url: './agreement.html?id=7',
+          type: ''
+        },
+        {
+          val: '联系我们',
+          url: './agreement.html?id=8',
+          type: ''
+        },
+        {
+          val: '厂商登录',
+          url: 'http://shangjia.fanr.club/',
+          type: '_blank'
+        },
+      ],
+      list: [{
+          val: '招商方向',
+          id: '1'
+        },
+        {
+          val: '招商标准',
+          id: '2'
+        },
+        {
+          val: '资质要求',
+          id: '3'
+        },
+        {
+          val: '资质标准',
+          id: '4'
+        },
+      ]
+
     },
     methods: {
-      init() {
-        console.log('初始化');
+      show(type) {
+        if (type == 1) {
+          $('#showbox1').slideToggle();
+          $('#showbox2').hide();
+          $('#showbox3').hide();
+
+        } else if (type == 2) {
+          $('#showbox3').slideToggle();
+          $('#showbox1').hide();
+          $('#showbox2').hide();
+        } else {
+          $('#showbox2').slideToggle();
+          $('#showbox1').hide();
+          $('#showbox3').hide();
+        }
+      },
+      qiehuan(id) {
+        this.activeIndex = id;
+
       }
     },
     mounted() {
-      this.init()
+
     }
+
   })
 </script>
+<style>
+  #app {
+    /* width: 100vw; */
+    min-width: 1200px;
+    height: 100%;
+    background: url(./image/join.png)no-repeat top;
+  }
+
+  .head {
+    margin-bottom: 100px;
+  }
+
+  .footer-box {
+    background-color: #2e2f32;
+  }
+
+  .section-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 160px;
+  }
+
+  .section-box h3 {
+    text-align: center;
+    font-weight: normal;
+    font-stretch: normal;
+    width: 100%;
+    font-size: 64px;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  .section-box p {
+    width: 160px;
+    height: 2px;
+    background: #fff;
+  }
+
+
+  .check-tab {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .check-tab .left-box {
+    width: 12vw;
+    margin-right: 4vw;
+    flex: 1;
+  }
+
+  .left-list li {
+    position: relative;
+    margin-bottom: 1vw;
+  }
+
+  .right-box {
+    flex: 7;
+  }
+
+  .right-box p {
+    line-height: 1.7;
+  }
+
+  .left-box .left-icon {
+    position: relative;
+    height: 3vw;
+    line-height: 3vw;
+    padding-left: 1vw;
+    background: #edecfb;
+    color: #003666;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .icon {
+    width: 0;
+    height: 0;
+    border-top: 1.5vw solid transparent;
+    border-bottom: 1.5vw solid transparent;
+    border-left: 1.5vw solid #edecfb;
+    position: absolute;
+    top: 0;
+    right: -1.5vw;
+    border-radius: 0px;
+  }
+
+  .active {
+    background: #fe6800 !important;
+    color: #fff !important;
+  }
+
+  .active-icon {
+    border-left: 1.5vw solid #fe6800 !important;
+
+  }
+</style>
 
 </html>
