@@ -25,7 +25,7 @@ export default {
         },
         {
           val: '品牌入驻',
-          url: './join.html'
+          url: './join_new.html'
         },
         {
           val: 'Fanr体验师',

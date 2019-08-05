@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="./image/icon-logo.ico">
+  <title>品牌入驻</title>
+</head>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/global.css">
+
+<body>
+  <div id="app">
+    <div class="content-box">
+      <header class="head">
+        <a href="/index.html" class="logo">
+          <img src="./image/logo.png" alt="">
+        </a>
+        <div>
+          <ul class="head-ul">
+            <li class="head-li" v-for="(item,index) in headList" :key="index">
+              <a :href="item.url" class="head-a" :class="{'active' :item.flag}">{{item.val}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <section class="section-box">
+        <h3>品牌入驻</h3>
+        <p></p>
+      </section>
+      <div class="tab-list">
+        <div class="tab-tips-1">
+          <img src="./image/tips1.png" alt="">
+        </div>
+
+      </div>
+    </div>
+    <footer class="footer-box">
+      <div class="footer-box-title-1">
+        <ul>
+          <li v-for="(item,index) in footerList" :key="index">
+            <a :href="item.url" :target="item.type">{{item.val}}</a>
+            <span v-if="index != footerList.length-1">｜</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-box-title-2">
+        <p>Cpoyright© 2019 Fanr.clubAll Rights Reserved  <a href="http://beian.miit.gov.cn/">备案号：苏ICP备18055127号</a>
+          苏网文[2019]3829-133号</p>
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="./js/jq.js"></script>
+<script src="./js/vue.js"></script>
+<script>
+  let app = new Vue({
+    el: '#app',
+    data: {
+      msg: '首页',
+      headList: [{
+          val: '首页',
+          url: '/index.html',
+        },
+        {
+          val: '品牌入驻',
+          url: './join_new.html',
+          flag: true
+        },
+        {
+          val: 'Fanr体验师',
+          url: './agreement.html?id=2'
+        },
+        {
+          val: '资讯中心',
+          url: './news.html'
+        },
+        {
+          val: '关于我们',
+          url: './agreement.html?id=1'
+        },
+      ],
+      footerList: [{
+          val: '注册协议',
+          url: './agreement.html?id=4',
+          type: ''
+        },
+        {
+          val: '隐私政策',
+          url: './agreement.html?id=5',
+          type: ''
+        },
+        {
+          val: '社区规范',
+          url: './agreement.html?id=6',
+          type: ''
+        },
+        {
+          val: '账号找回',
+          url: './agreement.html?id=7',
+          type: ''
+        },
+        {
+          val: '联系我们',
+          url: './agreement.html?id=8',
+          type: ''
+        },
+        {
+          val: '厂商登录',
+          url: 'http://shangjia.fanr.club/',
+          type: '_blank'
+        },
+      ]
+
+    },
+    methods: {
+      show(type) {
+        if (type == 1) {
+          $('#showbox1').slideToggle();
+          $('#showbox2').hide();
+          $('#showbox3').hide();
+
+        } else if (type == 2) {
+          $('#showbox3').slideToggle();
+          $('#showbox1').hide();
+          $('#showbox2').hide();
+        } else {
+          $('#showbox2').slideToggle();
+          $('#showbox1').hide();
+          $('#showbox3').hide();
+        }
+      }
+    },
+    mounted() {
+
+    }
+
+  })
+</script>
+<style>
+  #app {
+    /* width: 100vw; */
+    min-width: 1200px;
+    height: 100%;
+    background: url(./image/join.png)no-repeat top;
+  }
+
+  .head {
+    margin-bottom: 100px;
+  }
+
+  .footer-box {
+    background-color: #2e2f32;
+  }
+
+  .section-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 160px;
+  }
+
+  .section-box h3 {
+    text-align: center;
+    font-weight: normal;
+    font-stretch: normal;
+    width: 100%;
+    font-size: 64px;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  .section-box p {
+    width: 160px;
+    height: 2px;
+    background: #fff;
+  }
+
+  .tab-tips-1 {
+    width: 100%;
+
+  }
+
+  .tab-tips-1 img {
+    width: 100%;
+  }
+</style>
+
+</html>
